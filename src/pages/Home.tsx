@@ -1,4 +1,5 @@
-import { Container, Typography, Button } from '@mui/material';
+import { Container, Typography } from '@mui/material';
+import Cards from '../features/cards/Cards';
 
 const Home = () => {
   return (
@@ -9,9 +10,8 @@ const Home = () => {
       <Typography variant="body1">
         Обирай піцу — і ми доставимо її миттєво!
       </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-        До меню
-      </Button>
+
+      <Cards />
     </Container>
   );
 };
