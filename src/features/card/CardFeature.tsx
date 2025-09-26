@@ -1,14 +1,15 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import useStyles from './CardFeature.styles';
 
 interface CardFeatureProps {
     image: string;
     title: string;
     description: string;
+    onAddToCart?: () => void;
 }
 
-const CardFeature: React.FC<CardFeatureProps> = ({ image, title, description }) => {
+const CardFeature: React.FC<CardFeatureProps> = ({ image, title, description, onAddToCart }) => {
     const classes = useStyles();
 
     return (
@@ -27,6 +28,14 @@ const CardFeature: React.FC<CardFeatureProps> = ({ image, title, description }) 
                 <Typography variant="body2" color="text.secondary" className={classes.description}>
                     {description}
                 </Typography>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    onClick={onAddToCart}
+                >
+                    Add to Cart
+                </Button>
             </CardContent>
         </Card>
     );
